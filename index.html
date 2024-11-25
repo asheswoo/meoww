@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meow i got bored</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+            text-align: center;
+            /* Set background image */
+            background-image: url('flowers.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .heading-container {
+            position: relative;
+        }
+
+        .heading-image {
+            width: auto; /* Maintain original width */
+            height: auto; /* Maintain original height */
+            max-height: 12.5vh; /* Limit height to 1/8th of the viewport */
+        }
+
+        .description {
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        .bottom-image-container {
+            position: absolute;
+            bottom: 150px; /* Adjusted higher */
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .tap-me-text {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .bottom-image {
+            width: 200px; /* Set the size for the bottom image */
+            height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease; /* Smooth flip effect */
+        }
+
+        .bottom-image:hover {
+            transform: scale(1.1); /* Slight zoom effect on hover */
+        }
+
+        .hidden-image {
+            display: none;
+        }
+    </style>
+    <script>
+        function flipImage() {
+            // Flip to display the hidden image (bleh.jpeg)
+            const bottomImage = document.getElementById('bottomImage');
+            const hiddenImage = document.getElementById('hiddenImage');
+
+            if (bottomImage.style.display !== 'none') {
+                bottomImage.style.display = 'none';
+                hiddenImage.style.display = 'block';
+            } else {
+                bottomImage.style.display = 'block';
+                hiddenImage.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+
+<div class="heading-container">
+    <!-- Cats image scaled down -->
+    <img src="cats.jpg" alt="Cats Picture" class="heading-image">
+</div>
+
+<!-- Add centered description -->
+<p class="description">bleh bleh BLEEHH, miss you hehe</p>
+
+<!-- Bottom center image -->
+<div class="bottom-image-container">
+    <!-- "Tap me!" description -->
+    <p class="tap-me-text">Tap me!</p>
+    <!-- Images -->
+    <img src="girls.jpeg" id="bottomImage" alt="Girls Image" class="bottom-image" onclick="flipImage()">
+    <img src="bleh.jpeg" id="hiddenImage" alt="Bleh Image" class="bottom-image hidden-image">
+</div>
+
+git add .
+git commit -m "Renamed meow.html to index.html"
+git push origin main
+
+</body>
+</html>
